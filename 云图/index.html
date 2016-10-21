@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;list-style: none;}
+			#uls{
+				width: 550px;
+				height: 383px;
+				margin: 100px auto;
+			}
+			
+			#uls li p{
+				margin-top: 50px;
+				float: left;
+			}
+			#uus{
+				width: 550px;
+				margin: 0 auto;
+			}
+			#uus li{
+				float: left;
+				margin-right:10px;
+			}
+			input{
+				padding: 5px;
+				border-radius: 10%;
+				outline: none;
+			}
+			.df{
+				position: relative;
+				float: left;
+			}
+			.ds{
+				z-index: 10;
+				margin-left: 10px;
+				margin-top: 53px;
+				position: relative;
+				width: 480px;
+				height: 10px;
+				border: 1px solid #333;
+			}
+			#dd{
+				height: 10px;
+				border: 1px solid #a24;
+				background:red;
+				position: absolute;
+			}
+			#dc{
+				position: absolute;
+				top: 43px;
+				left: 13px;
+				width: 0px;
+				height: 0px;
+				border: 10px solid red;
+				border-bottom-color: white;
+				border-left-color: white;
+				border-right-color: white;
+				background: blue;
+			}
+			#uus li input{
+				margin-top: 3px;
+				/*float: left;*/
+			}
+			#uus li p{
+				float: left;
+			}
+			#ulis{
+				position: relative;
+			}
+			#ulis img{
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			.lis{
+				position: absolute;
+				top: 480px;
+			}
+		</style>
+		<!--<script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>-->
+	</head>
+	<body ng-controller="test">
+		<ul id="uls">
+			<li id="ulis">
+				<img src="img/{{ima}}.jpg" ng-model="ima"/>
+			</li>
+			<li class="lis">
+				<p>进度</p>
+				<div class="df">
+					<div class="ds">
+						<div id="dd" style="width: {{kuan}}px;" ng-model="kuan"></div>
+					</div>
+					<div id="dc" style="left: {{zuo}}px;" ng-model="zuo"></div>
+				</div>
+			</li>
+		</ul>
+		<ul id="uus">
+			<li>
+				<button ng-click='a()' ng-model="text">{{text}}</button>
+				<!--<input type="button" value="动画播放" id="but" />-->
+			</li>
+			<li>
+				<input type="button" value="前一帧" id="bot" ng-click='b()'/>
+			</li>
+			<li>
+				<input type="button" value="下一帧" id="bit" ng-click='c()'/>
+			</li>
+			<li id="llis">
+				<p>播放速度</p>
+				<label><input type="radio" id="" name="sh" value="" ng-click="d()"/>0.5秒</label>
+				<label><input type="radio" id="" name="sh" value="" ng-click="e()"/>1秒</label>
+				<label><input type="radio" id="" name="sh" value="" ng-click="f()"/>2秒</label>
+				
+			</li>
+			<li>
+				<select id="sel" ng-change="sel(mysel)" ng-model="mysel">
+					<!--<option value="0">2016年7月14日11时45分</option>-->
+					<option value="1">2016年7月14日11时45分</option>
+					<option value="2">2016年7月14日12时15分</option>
+					<option value="3">2016年7月14日12时45分</option>
+					<option value="4">2016年7月14日13时15分</option>
+					<option value="5">2016年7月14日13时45分</option>
+					<option value="6">2016年7月14日14时15分</option>
+					<option value="7">2016年7月14日14时45分</option>
+					<option value="8">2016年7月14日15时15分</option>
+					<option value="9">2016年7月14日15时45分</option>
+					<option value="10">2016年7月14日16时15分</option>
+					<option value="11">2016年7月14日16时45分</option>
+					<option value="12">2016年7月14日17时15分</option>
+					<option value="13">2016年7月14日17时45分</option>
+					<option value="14">2016年7月14日18时15分</option>
+					<option value="15">2016年7月14日18时45分</option>
+					<option value="16">2016年7月14日19时15分</option>
+					<option value="17">2016年7月14日19时45分</option>
+					<option value="18">2016年7月14日20时15分</option>
+					<option value="19">2016年7月14日20时45分</option>
+					<option value="20">2016年7月14日21时15分</option>
+					<option value="21">2016年7月14日21时45分</option>
+					<option value="22">2016年7月14日22时15分</option>
+					<option value="23">2016年7月14日22时45分</option>
+					<option value="24">2016年7月14日23时15分</option>
+					<option value="25">2016年7月14日23时45分</option>
+					<option value="26">2016年7月15日00时15分</option>
+					<option value="27">2016年7月15日00时45分</option>
+					<option value="28">2016年7月15日01时15分</option>
+					<option value="29">2016年7月15日01时45分</option>
+					<option value="30">2016年7月15日02时15分</option>
+					<option value="31">2016年7月15日02时45分</option>
+					<option value="32">2016年7月15日03时15分</option>
+					<option value="33">2016年7月15日03时45分</option>
+					<option value="34">2016年7月15日04时15分</option>
+					<option value="35">2016年7月15日04时45分</option>
+					<option value="36">2016年7月15日05时15分</option>
+					<option value="37">2016年7月15日05时45分</option>
+					<option value="38">2016年7月15日06时15分</option>
+					<option value="39">2016年7月15日06时45分</option>
+					<option value="40">2016年7月15日07时15分</option>
+					<option value="41">2016年7月15日07时45分</option>
+					<option value="42">2016年7月15日08时15分</option>
+					<option value="43">2016年7月15日08时45分</option>
+					<option value="44">2016年7月15日09时15分</option>
+					<option value="45">2016年7月15日09时45分</option>
+					<option value="46">2016年7月15日10时15分</option>
+					<option value="47">2016年7月15日10时45分</option>
+					<option value="48">2016年7月15日11时15分</option>
+					<!--<option value="49">2016年7月15日11时45分</option>
+					<option value="50">2016年7月15日12时15分</option>-->
+					
+				</select>
+			</li>
+		</ul>
+	</body>
+	<script src="js/angular-1.2.20.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+	<!--<script src="js/angular-1.2.20.min.js" type="text/javascript" charset="utf-8"></script>-->
+	<script type="text/javascript">
+		var n=1;
+		var aa=true;
+		var app=angular.module("myApp",[])
+		app.controller("test",["$scope","$interval",function($scope,$interval){
+			var ss=100;
+			$scope.text="动画播放";
+			var dd=function(){
+				$scope.mysel=$scope.ima=n;
+				$scope.kuan=10*n;
+				$scope.zuo=10*n;
+			}
+			dd();
+			$scope.a=function(){
+				aa=!aa;
+				if(aa){
+					$scope.text="动画播放";
+					$interval.cancel(i)
+				}else{
+					$scope.text="停止播放";
+					i=$interval(function(){
+						n++;
+						if(n>48){
+							n=1;
+							aa=!aa
+							$scope.text="动画播放";
+							$interval.cancel(i)
+						}
+						dd()
+					},ss)
+				}
+			};
+			$scope.b=function(){
+				n--;
+				if(n<1){
+					n=1;
+				}
+				dd();
+			};
+			$scope.c=function(){
+				n++;
+				if(n>48){
+					n=1;
+				}
+				dd();
+			};
+			$scope.sel=function(){
+				var nn = $('select').val();
+				n=nn;
+				dd()
+			}
+			$scope.d=function(){
+				ss=500;
+			}
+			$scope.e=function(){
+				ss=1000;
+			}
+			$scope.f=function(){
+				ss=2000;
+			}
+			
+		}])
+	</script>
+</html>
